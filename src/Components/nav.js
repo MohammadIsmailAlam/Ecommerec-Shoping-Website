@@ -32,7 +32,7 @@ export default function Nav() {
               <div className="user_icon text-blue-900 text-base">
                 <AiOutlineUser />
               </div>
-              <p className="mr-1 text-blue-500 text-xl">Hello, User</p>
+              <p className="mr-1">Hello, User</p>
             </div>
             <AiOutlineHeart className="text-blue-500 text-xl" />
             <BsBagCheck className="text-blue-500 text-xl ml-2" />
