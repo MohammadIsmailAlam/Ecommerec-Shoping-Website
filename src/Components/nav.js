@@ -40,8 +40,10 @@ export default function Nav() {
               </div>
               <p className="mr-1">Hello, User</p>
             </div>
-            <AiOutlineHeart className="text-blue-500 text-xl" />
-            <BsBagCheck className="text-blue-500 text-xl ml-2" />
+            <div className="flex cursor-pointer">
+              <AiOutlineHeart className="text-blue-500 text-xl" />
+              <BsBagCheck className="text-blue-500 text-xl ml-2" />
+            </div>
           </div>
         </div>
       </div>
