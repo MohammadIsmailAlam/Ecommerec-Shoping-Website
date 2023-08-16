@@ -2,6 +2,8 @@ import React from "react";
 import { FaTruckMoving } from "react-icons/fa";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { BsBagCheck } from "react-icons/bs";
+import { BiSearchAlt } from "react-icons/bi";
+import Logo from "../Assets/img/logo.svg";
 
 export default function Nav() {
   return (
@@ -18,14 +20,18 @@ export default function Nav() {
       <div className="main_header border-b bg-white py-8 px-10">
         <div className="container flex justify-between items-center">
           <div className="logo">
-            <img src="./img/logo.svg" alt="logo" />
+            <img src={Logo} alt="logo" />
           </div>
-          <div className="search_box mr-8">
+          <div className="search_box mr-8 flex items-center">
+            {" "}
             <input
               type="text"
               placeholder="Enter The Product Name"
-              className="outline-none py-2 px-4 border-3 border-blue-500 w-60 text-blue-900"
+              className=" py-2 px-4 border-3 border-zinc-400 w-50 text-black"
             />
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">
+              <BiSearchAlt />
+            </button>
           </div>
           <div className="icon flex items-center">
             <div className="account flex items-center mr-6">
