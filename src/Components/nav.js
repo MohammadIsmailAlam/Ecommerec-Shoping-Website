@@ -19,17 +19,16 @@ export default function Nav() {
         </p>
       </div>
 
-      <div className="main_header border-b bg-white py-8 px-10">
+      <div className="main_header border-b border-zinc-400 bg-white py-8 px-10">
         <div className="container flex justify-between items-center">
           <div className="logo">
             <img src={Logo} alt="logo" />
           </div>
           <div className="search_box mr-8 flex items-center">
-            {" "}
             <input
               type="text"
               placeholder="Enter The Product Name"
-              className=" py-2 px-4 border-3 border-zinc-400 w-50 text-black"
+              className="py-2 px-4 border-3 border-zinc-400 w-50 text-black"
             />
             <button className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">
               <BiSearchAlt />
@@ -43,7 +42,12 @@ export default function Nav() {
               <p className="mr-1">Hello, User</p>
             </div>
             <div className="flex cursor-pointer">
-              <AiOutlineHeart className="text-blue-500 text-xl" />
+              <AiOutlineHeart
+                className="text-blue-500 text-xl"
+                onClick={() => {
+                  navigate("/");
+                }}
+              />
               <BsBagCheck
                 className="text-blue-500 text-xl ml-2"
                 onClick={() => {
@@ -55,7 +59,50 @@ export default function Nav() {
         </div>
       </div>
 
-      <div></div>
+      <div className="header bg-white py-5 px-8 shadow-md">
+        <ul className="flex">
+          <li>
+            <button
+              onClick={() => {
+                navigate("/");
+              }}
+              className="text-blue-500 hover:text-blue-700 mr-4"
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                navigate("/product");
+              }}
+              className="text-blue-500 hover:text-blue-700 mr-4"
+            >
+              Product
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                navigate("/about");
+              }}
+              className="text-blue-500 hover:text-blue-700 mr-4"
+            >
+              About
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                navigate("/contact");
+              }}
+              className="text-blue-500 hover:text-blue-700"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }
