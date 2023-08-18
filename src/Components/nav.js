@@ -4,8 +4,10 @@ import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { BsBagCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import Logo from "../Assets/img/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="free bg-blue-900 p-2 flex">
@@ -42,11 +44,18 @@ export default function Nav() {
             </div>
             <div className="flex cursor-pointer">
               <AiOutlineHeart className="text-blue-500 text-xl" />
-              <BsBagCheck className="text-blue-500 text-xl ml-2" />
+              <BsBagCheck
+                className="text-blue-500 text-xl ml-2"
+                onClick={() => {
+                  navigate("/cart");
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
+
+      <div></div>
     </>
   );
 }
