@@ -5,9 +5,14 @@ import { BsBagCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import Logo from "../Assets/img/logo.svg";
 import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "./auth/Login";
+import LogoutButton from "./auth/LogOut";
 
 export default function Nav() {
   const navigate = useNavigate();
+  const { isAuthenticated, user } = useAuth0(); // Get authentication status and user data
+
   return (
     <>
       <div className="free bg-blue-900 p-2 flex">
@@ -35,12 +40,15 @@ export default function Nav() {
             </button>
           </div>
           <div className="icon flex items-center">
-            <div className="account flex items-center mr-6">
-              <div className="user_icon text-blue-900 text-base">
-                <AiOutlineUser />
+            {isAuthenticated && (
+              <div className="account flex items-center mr-6">
+                <div className="user_icon text-blue-900 text-base">
+                  <AiOutlineUser />
+                </div>
+                <p className="mr-1">Hello, {user.name}</p>
               </div>
-              <p className="mr-1">Hello, User</p>
-            </div>
+            )}
+
             <div className="flex cursor-pointer">
               <AiOutlineHeart
                 className="text-blue-500 text-xl"
@@ -59,7 +67,7 @@ export default function Nav() {
         </div>
       </div>
 
-      <div className="header bg-white py-5 px-8 shadow-md">
+      <div className="header bg-white py-5 px-8 shadow-md flex justify-between">
         <ul className="flex">
           <li>
             <button
@@ -102,6 +110,13 @@ export default function Nav() {
             </button>
           </li>
         </ul>
+        <div className="auth flex items-center">
+          {isAuthenticated ? (
+            <LogoutButton className="mr-4 text-xl cursor-pointer" />
+          ) : (
+            <LoginButton className="mr-4 text-xl cursor-pointer" />
+          )}
+        </div>
       </div>
     </>
   );
