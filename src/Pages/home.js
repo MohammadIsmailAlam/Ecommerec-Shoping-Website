@@ -6,6 +6,7 @@ import mobilePhone from "../Assets/img/Mobile Phone.png";
 import smartWatch from "../Assets/img/smart watch.png";
 import headPhone from "../Assets/img/headphone.png";
 import cpuHeat from "../Assets/img/cpu heat.jpg";
+import About from "../Components/About";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Home = () => {
               className="py-2 px-4 mt-2 bg-white text-blue-800 rounded hover:bg-blue-100 transition flex items-center space-x-1"
             >
               Shop Now
-              <BsArrowRight className="text-blue-800" />
+              <BsArrowRight className="text-blue-800 ml-2 mt-1" />
             </button>
           </div>
           <div className="img_box">
@@ -92,6 +93,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <About/>
     </>
   );
 };
