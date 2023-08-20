@@ -18,7 +18,7 @@ const HomeProduct = [
     Title: "Cancelling Headphones Wireless.",
     Cat: "Headphone",
     Price: "49",
-    Img: "img/tp3.jpg",
+    Img: "./img/tp3.jpg",
   },
   {
     id: 4,
