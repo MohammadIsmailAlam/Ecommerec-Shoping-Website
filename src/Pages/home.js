@@ -7,6 +7,7 @@ import smartWatch from "../Assets/img/smart watch.png";
 import headPhone from "../Assets/img/headphone.png";
 import cpuHeat from "../Assets/img/cpu heat.jpg";
 import About from "../Components/About";
+import Product from "../Components/Product";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -93,7 +94,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <About/>
+      <About />
+      <Product />
     </>
   );
 };

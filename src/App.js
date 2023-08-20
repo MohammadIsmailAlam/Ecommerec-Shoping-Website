@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Nav from "./Components/nav";
 import Home from "./Pages/Home";
-import Product from "./Pages/Product";
-import About from "./Components/About";
 import Contact from "./Pages/Contact";
+import Product from "./Components/Product";
+import About from "./Components/About";
 
 export const userContext = React.createContext(null);
 
