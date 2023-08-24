@@ -8,6 +8,8 @@ import headPhone from "../Assets/img/headphone.png";
 import cpuHeat from "../Assets/img/cpu heat.jpg";
 import About from "../Components/About";
 import Product from "../Components/Product";
+import Footer from "../Components/Footer";
+import Banner from "../Components/Banner";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ const Home = () => {
             </h2>
             <button
               onClick={() => navigate("/product")}
-              className="py-2 px-4 mt-2 bg-white text-blue-800 rounded hover:bg-blue-100 transition flex items-center space-x-1"
+              className="btn-shopNow"
             >
               Shop Now
               <BsArrowRight className="text-blue-800 ml-2 mt-1" />
@@ -34,7 +36,7 @@ const Home = () => {
         </div>
       </div>
       <div className="product_type py-5 px-8">
-        <div className="container flex justify-between">
+        <div className="container md:flex justify-between">
           <div className="box">
             <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer">
               <img
@@ -96,6 +98,8 @@ const Home = () => {
       </div>
       <About />
       <Product />
+      <Banner/>
+      <Footer/>
     </>
   );
 };
