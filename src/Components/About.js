@@ -7,7 +7,7 @@ import { BiHeadphone } from "react-icons/bi";
 const About = () => {
   return (
     <div className="about bg-gray-100 py-10">
-      <div className="container mx-auto flex justify-evenly">
+      <div className="container mx-auto md:flex justify-evenly">
         <div className="box flex bg-blue-200 p-4 rounded-md cursor-pointer">
           <div className="icon text-pink-500">
             <FiTruck className="text-2xl" />
