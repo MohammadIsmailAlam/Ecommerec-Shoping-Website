@@ -11,8 +11,7 @@ import LogoutButton from "./auth/LogOut";
 
 export default function Nav() {
   const navigate = useNavigate();
-  const { isAuthenticated, user } = useAuth0(); // Get authentication status and user data
-
+  const { isAuthenticated, user } = useAuth0();
   return (
     <>
       <div className="free bg-blue-900 p-2 flex">
@@ -25,8 +24,8 @@ export default function Nav() {
       </div>
 
       <div className="main_header border-b border-zinc-400 bg-white py-8 px-10">
-        <div className="container flex justify-between items-center">
-          <div className="logo w-60	max-h-16">
+        <div className="container md:flex justify-between items-center">
+          <div className="logo max-w-[250px]">
             <img src={Logo} alt="logo" />
           </div>
           <div className="search_box mr-8 flex items-center">
