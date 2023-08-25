@@ -36,3 +36,7 @@
 .icon-btn {
     @apply w-7 h-7;
 }
+
+.productList-li-btn {
+    @apply px-4 py-2;
+  }

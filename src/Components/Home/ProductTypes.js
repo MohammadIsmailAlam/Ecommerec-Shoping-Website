@@ -8,8 +8,8 @@ const ProductTypes = () => {
   return (
     <div className="product_type py-5 px-8">
       <div className="container md:flex justify-between">
-        <div className="box">
-          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer">
+        <div className="box flex flex-col md:flex-row items-center">
+          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer mb-3 md:mb-0">
             <img
               src={mobilePhone}
               alt="Mobile Phone"
@@ -23,8 +23,8 @@ const ProductTypes = () => {
           </div>
         </div>
 
-        <div className="box">
-          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer">
+        <div className="box flex flex-col md:flex-row items-center">
+          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer mb-3 md:mb-0">
             <img
               src={smartWatch}
               alt="Smart Watch"
@@ -37,8 +37,8 @@ const ProductTypes = () => {
             </p>
           </div>
         </div>
-        <div className="box">
-          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer">
+        <div className="box flex flex-col md:flex-row items-center">
+          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer mb-3 md:mb-0">
             <img
               src={headPhone}
               alt="Head Phone"
@@ -51,8 +51,8 @@ const ProductTypes = () => {
             </p>
           </div>
         </div>
-        <div className="box">
-          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer">
+        <div className="box flex flex-col md:flex-row items-center">
+          <div className="img_box h-32 w-32 rounded-full bg-blue-200 flex items-center justify-center cursor-pointer mb-3 md:mb-0">
             <img
               src={cpuHeat}
               alt="CPU Heat."
