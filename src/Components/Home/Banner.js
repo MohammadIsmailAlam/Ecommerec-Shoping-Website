@@ -1,6 +1,6 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
-import SliderImg from "../Assets/img/slider-img.png";
+import SliderImg from "../../Assets/img/slider-img.png";
 import { useNavigate } from "react-router-dom";
 
 const Banner = () => {

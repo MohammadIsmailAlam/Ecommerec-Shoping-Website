@@ -1,5 +1,5 @@
 import React from "react";
-import HomeProduct from "../Assets/HomeProduct";
+import HomeProduct from "../../Assets/HomeProduct";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
