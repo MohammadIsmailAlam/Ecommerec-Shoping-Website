@@ -8,7 +8,6 @@ import headPhone from "../Assets/img/headphone.png";
 import cpuHeat from "../Assets/img/cpu heat.jpg";
 import About from "../Components/About";
 import Product from "../Components/Product";
-import Footer from "../Components/Footer";
 import Banner from "../Components/Banner";
 
 const Home = () => {
@@ -99,7 +98,6 @@ const Home = () => {
       <About />
       <Product />
       <Banner/>
-      <Footer/>
     </>
   );
 };
