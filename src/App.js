@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Product from "./Components/Product";
 import About from "./Components/About";
+import Footer from "./Components/Footer";
 
 export const userContext = React.createContext(null);
 
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <Footer />
         </Router>
       </userContext.Provider>
     </>
