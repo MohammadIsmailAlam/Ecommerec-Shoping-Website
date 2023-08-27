@@ -3,7 +3,7 @@ import ProductDetails from "../Assets/ProductDetails";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 
-const Product = () => {
+const ProductList = () => {
   const [product, setProduct] = useState(ProductDetails);
   const filtterproduct = (product) => {
     const update = ProductDetails.filter((x) => {
@@ -108,4 +108,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductList;
