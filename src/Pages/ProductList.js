@@ -4,19 +4,16 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 
 const Product = () => {
-  const [product, setProduct] = useState(ProductDetails)
-      const filtterproduct = (product) =>
-    {
-        const update = ProductDetails.filter((x) => 
-        {
-           return x.Cat === product;
-        })
-        setProduct(update);
-    }
-    const AllProducts = () => 
-    {
-        setProduct(ProductDetails)
-    }
+  const [product, setProduct] = useState(ProductDetails);
+  const filtterproduct = (product) => {
+    const update = ProductDetails.filter((x) => {
+      return x.Cat === product;
+    });
+    setProduct(update);
+  };
+  const AllProducts = () => {
+    setProduct(ProductDetails);
+  };
   return (
     <>
       <div className="products p-8">
@@ -27,12 +24,42 @@ const Product = () => {
             <div className="categories">
               <h3 className="text-lg font-semibold">Categories</h3>
               <ul className="mt-3 space-y-3">
-              <li className="productList-li-btn" onClick={() => AllProducts ()}> All Products </li>
-                <li className="productList-li-btn" onClick={() => filtterproduct ("Tablet")}> Tablet </li>
-                <li className="productList-li-btn" onClick={() => filtterproduct ("Smart Watch")}> Smart Watch </li>
-                <li className="productList-li-btn" onClick={() => filtterproduct ("Headphone")}> HeadPhone </li>
-                <li className="productList-li-btn" onClick={() => filtterproduct ("Camera")}> Camera </li>
-                <li className="productList-li-btn" onClick={() => filtterproduct ("Gaming")}> Gaming </li>
+                <li
+                  className="productList-li-btn"
+                  onClick={() => AllProducts()}
+                >
+                  All Products
+                </li>
+                <li
+                  className="productList-li-btn"
+                  onClick={() => filtterproduct("Tablet")}
+                >
+                  Tablet
+                </li>
+                <li
+                  className="productList-li-btn"
+                  onClick={() => filtterproduct("Smart Watch")}
+                >
+                  Smart Watch
+                </li>
+                <li
+                  className="productList-li-btn"
+                  onClick={() => filtterproduct("Headphone")}
+                >
+                  HeadPhone
+                </li>
+                <li
+                  className="productList-li-btn"
+                  onClick={() => filtterproduct("Camera")}
+                >
+                  Camera
+                </li>
+                <li
+                  className="productList-li-btn"
+                  onClick={() => filtterproduct("Gaming")}
+                >
+                  Gaming
+                </li>
               </ul>
             </div>
           </div>
@@ -41,10 +68,7 @@ const Product = () => {
               <div className="mx-8 grid gap-5 xl:grid-cols-4">
                 {product.map((curElm) => {
                   return (
-                    <div
-                      className="product-box"
-                      key={curElm.id}
-                    >
+                    <div className="product-box" key={curElm.id}>
                       <div className="img_box relative group">
                         <img
                           src={curElm.Img}
