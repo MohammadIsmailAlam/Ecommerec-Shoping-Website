@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductDetails from "../Assets/ProductDetails";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 
 const Product = () => {
+  const [product, setProduct] = useState(ProductDetails)
+      const filtterproduct = (product) =>
+    {
+        const update = ProductDetails.filter((x) => 
+        {
+           return x.Cat === product;
+        })
+        setProduct(update);
+    }
+    const AllProducts = () => 
+    {
+        setProduct(ProductDetails)
+    }
   return (
     <>
       <div className="products p-8">
@@ -14,28 +27,19 @@ const Product = () => {
             <div className="categories">
               <h3 className="text-lg font-semibold">Categories</h3>
               <ul className="mt-3 space-y-3">
-                <li>
-                  <button className="px-4 py-2">Tablet</button>
-                </li>
-                <li>
-                  <button className="px-4 py-2">Smart Watch</button>
-                </li>
-                <li>
-                  <button className="px-4 py-2">HeadPhone</button>
-                </li>
-                <li>
-                  <button className="px-4 py-2">Camera</button>
-                </li>
-                <li>
-                  <button className="px-4 py-2">Gaming</button>
-                </li>
+              <li className="productList-li-btn" onClick={() => AllProducts ()}> All Products </li>
+                <li className="productList-li-btn" onClick={() => filtterproduct ("Tablet")}> Tablet </li>
+                <li className="productList-li-btn" onClick={() => filtterproduct ("Smart Watch")}> Smart Watch </li>
+                <li className="productList-li-btn" onClick={() => filtterproduct ("Headphone")}> HeadPhone </li>
+                <li className="productList-li-btn" onClick={() => filtterproduct ("Camera")}> Camera </li>
+                <li className="productList-li-btn" onClick={() => filtterproduct ("Gaming")}> Gaming </li>
               </ul>
             </div>
           </div>
           <div className="productbox flex flex-wrap">
             <div className="container">
               <div className="mx-8 grid gap-5 xl:grid-cols-4">
-                {ProductDetails.map((curElm) => {
+                {product.map((curElm) => {
                   return (
                     <div
                       className="product-box"
