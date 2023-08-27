@@ -3,7 +3,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { RiFacebookFill } from "react-icons/ri";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { BsYoutube } from "react-icons/bs";
-import logo from "../Assets/img/logo_transparent.png";
+import logo from "../Assets/img/logo_transparent123.png";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="footer bg-blue-100">
         <div className="container md:flex justify-between px-8 py-6">
           <div className="about">
-            <div className="logo max-w-[250px]">
+            <div className="logo max-w-[250px] py-5">
               <img src={logo} alt="logo" />
             </div>
             <div className="detail text-left md:text-center">

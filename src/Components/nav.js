@@ -24,12 +24,12 @@ export default function Nav() {
         </p>
       </div>
 
-      <div className="main_header border-b border-zinc-400 bg-white py-8 px-10">
+      <div className="main_header border-b border-zinc-400 bg-white">
         <div className="container md:flex justify-between items-center">
           <div className="logo max-w-[250px]">
             <img src={Logo} alt="logo" />
           </div>
-          <div className="search_box mr-8 flex items-center">
+          <div className="search_box mr-8 md:flex items-center">
             <input
               type="text"
               value={search}
@@ -41,7 +41,7 @@ export default function Nav() {
               <BiSearchAlt />
             </button>
           </div>
-          <div className="icon flex items-center">
+          <div className="icon md:flex items-center">
             {isAuthenticated && (
               <div className="account flex items-center mr-6">
                 <div className="user_icon text-blue-900 text-base">
@@ -70,7 +70,7 @@ export default function Nav() {
       </div>
 
       <div className="header bg-white py-5 px-8 shadow-md flex justify-between">
-        <ul className="flex">
+        <ul className="md:flex">
           <li>
             <button
               onClick={() => {
