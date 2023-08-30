@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export default function Product({view}) {
+export default function Product({view, addtocart}) {
   return (
     <div className="mb-5">
       <h2 className="text-2xl text-gray-800 mb-5 my-8 ml-4">Top Products</h2>
@@ -21,7 +21,7 @@ export default function Product({view}) {
                 className="h-48 w-48 mx-auto transition-transform group-hover:scale-105"
               />
               <div className="icon absolute inset-0 flex flex-col items-end mx-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="btn-product-icons ml-2">
+                <button className="btn-product-icons ml-2" onClick={() => addtocart (curElm)}>
                   <AiOutlineShoppingCart />
                 </button>
                 <button className="btn-product-icons ml-2" onClick={() => view(curElm)}>

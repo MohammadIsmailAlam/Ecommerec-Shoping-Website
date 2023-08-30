@@ -11,6 +11,7 @@ const ProductList = ({
   close,
   setClose,
   view,
+  addtocart
 }) => {
   const filtterproduct = (product) => {
     const update = ProductDetails.filter((x) => {
@@ -84,7 +85,7 @@ const ProductList = ({
                           className="h-48 w-48 mx-auto transition-transform group-hover:scale-105"
                         />
                         <div className="icon absolute inset-0 flex flex-col items-end mx-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="btn-product-icons ml-2">
+                          <button className="btn-product-icons ml-2" onClick={() => addtocart (curElm)}>
                             <AiOutlineShoppingCart />
                           </button>
                           <button

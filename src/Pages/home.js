@@ -5,13 +5,13 @@ import Banner from "../Components/Home/Banner";
 import TopBanner from "../Components/Home/TopBanner";
 import ProductTypes from "../Components/Home/ProductTypes";
 
-const Home = ({close, setClose, detail, view}) => {
+const Home = ({close, setClose, detail, view, addtocart}) => {
   return (
     <>
       <TopBanner />
       <ProductTypes />
       <About />
-      <Product close={close} onClose={() => setClose(false)} detail={detail} view={view}/>
+      <Product close={close} onClose={() => setClose(false)} detail={detail} view={view} addtocart={addtocart}/>
       <Banner />
     </>
   );
