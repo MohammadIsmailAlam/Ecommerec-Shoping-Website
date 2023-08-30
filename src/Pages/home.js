@@ -5,13 +5,13 @@ import Banner from "../Components/Home/Banner";
 import TopBanner from "../Components/Home/TopBanner";
 import ProductTypes from "../Components/Home/ProductTypes";
 
-const Home = () => {
+const Home = ({close, setClose, detail, view}) => {
   return (
     <>
       <TopBanner />
       <ProductTypes />
       <About />
-      <Product />
+      <Product close={close} onClose={() => setClose(false)} detail={detail} view={view}/>
       <Banner />
     </>
   );

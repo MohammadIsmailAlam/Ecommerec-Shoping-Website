@@ -4,7 +4,14 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import Modal from "../Components/Model";
 
-const ProductList = ({ product, setProduct, detail, close, setClose, view }) => {
+const ProductList = ({
+  product,
+  setProduct,
+  detail,
+  close,
+  setClose,
+  view,
+}) => {
   const filtterproduct = (product) => {
     const update = ProductDetails.filter((x) => {
       return x.Cat === product;
@@ -29,43 +36,37 @@ const ProductList = ({ product, setProduct, detail, close, setClose, view }) => 
                   className="productList-li-btn"
                   onClick={() => AllProducts()}
                 >
-                  {" "}
-                  All Products{" "}
+                  All Products
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Tablet")}
                 >
-                  {" "}
-                  Tablet{" "}
+                  Tablet
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Smart Watch")}
                 >
-                  {" "}
-                  Smart Watch{" "}
+                  Smart Watch
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Headphone")}
                 >
-                  {" "}
-                  HeadPhone{" "}
+                  HeadPhone
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Camera")}
                 >
-                  {" "}
-                  Camera{" "}
+                  Camera
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Gaming")}
                 >
-                  {" "}
-                  Gaming{" "}
+                  Gaming
                 </li>
               </ul>
             </div>

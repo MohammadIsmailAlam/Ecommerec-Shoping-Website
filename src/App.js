@@ -37,7 +37,7 @@ const App = () => {
         <Router>
           <Nav searchBtn={searchBtn} />
           <Routes>
-            <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home close={close} onClose={() => setClose(false)} detail={detail} view={view}/>} />
             <Route
               path="/product"
               element={
