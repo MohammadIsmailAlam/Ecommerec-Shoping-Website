@@ -31,6 +31,7 @@ export default function Nav({ searchBtn }) {
           </div>
           <div className="search_box mr-8 md:flex items-center">
             <form
+              className="md:flex items-center"
               onSubmit={(e) => {
                 e.preventDefault();
                 searchBtn(search);
@@ -41,7 +42,7 @@ export default function Nav({ searchBtn }) {
                 value={search}
                 placeholder="Enter The Product Name"
                 onChange={(e) => setSearch(e.target.value)}
-                className="py-2 px-4 border-3 border-zinc-400 w-50 text-black"
+                className="py-2 px-4 border-3 border-zinc-400 w-full md:w-50 text-black"
               />
               <button
                 type="submit"
@@ -51,9 +52,10 @@ export default function Nav({ searchBtn }) {
               </button>
             </form>
           </div>
+
           <div className="icon md:flex items-center">
             {isAuthenticated && (
-              <div className="account flex items-center mr-6">
+              <div className="account md:flex items-center mr-8">
                 <div className="user_icon text-blue-900 text-base">
                   <AiOutlineUser />
                 </div>
@@ -61,7 +63,7 @@ export default function Nav({ searchBtn }) {
               </div>
             )}
 
-            <div className="flex cursor-pointer">
+            <div className="md:flex cursor-pointer">
               <AiOutlineHeart
                 className="text-blue-500 text-xl"
                 onClick={() => {
