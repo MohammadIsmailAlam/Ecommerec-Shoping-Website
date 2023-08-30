@@ -3,6 +3,7 @@ import ProductDetails from "../Assets/ProductDetails";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import Modal from "../Components/Model";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ProductList = ({
   product,
@@ -11,8 +12,10 @@ const ProductList = ({
   close,
   setClose,
   view,
-  addtocart
+  addtocart,
 }) => {
+  const { isAuthenticated, loginWithRedirect} = useAuth0();
+
   const filtterproduct = (product) => {
     const update = ProductDetails.filter((x) => {
       return x.Cat === product;
@@ -85,9 +88,21 @@ const ProductList = ({
                           className="h-48 w-48 mx-auto transition-transform group-hover:scale-105"
                         />
                         <div className="icon absolute inset-0 flex flex-col items-end mx-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="btn-product-icons ml-2" onClick={() => addtocart (curElm)}>
-                            <AiOutlineShoppingCart />
-                          </button>
+                          {isAuthenticated ? (
+                            <button
+                              className="btn-product-icons ml-2"
+                              onClick={() => addtocart(curElm)}
+                            >
+                              <AiOutlineShoppingCart />
+                            </button>
+                          ) : (
+                            <button
+                              className="btn-product-icons ml-2"
+                              onClick={() => loginWithRedirect()}
+                            >
+                              <AiOutlineShoppingCart />
+                            </button>
+                          )}
                           <button
                             className="btn-product-icons ml-2"
                             onClick={() => view(curElm)}

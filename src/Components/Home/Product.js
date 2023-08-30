@@ -3,17 +3,16 @@ import HomeProduct from "../../Assets/HomeProduct";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
+import { useAuth0 } from "@auth0/auth0-react";
 
-export default function Product({view, addtocart}) {
+export default function Product({ view, addtocart }) {
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
   return (
     <div className="mb-5">
       <h2 className="text-2xl text-gray-800 mb-5 my-8 ml-4">Top Products</h2>
       <div className="mx-8 grid gap-5 xl:grid-cols-4">
         {HomeProduct.map((curElm) => (
-          <div
-            className="product-box"
-            key={curElm.id}
-          >
+          <div className="product-box" key={curElm.id}>
             <div className="img_box relative group">
               <img
                 src={curElm.Img}
@@ -21,10 +20,25 @@ export default function Product({view, addtocart}) {
                 className="h-48 w-48 mx-auto transition-transform group-hover:scale-105"
               />
               <div className="icon absolute inset-0 flex flex-col items-end mx-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="btn-product-icons ml-2" onClick={() => addtocart (curElm)}>
-                  <AiOutlineShoppingCart />
-                </button>
-                <button className="btn-product-icons ml-2" onClick={() => view(curElm)}>
+                {isAuthenticated ? (
+                  <button
+                    className="btn-product-icons ml-2"
+                    onClick={() => addtocart(curElm)}
+                  >
+                    <AiOutlineShoppingCart />
+                  </button>
+                ) : (
+                  <button
+                    className="btn-product-icons ml-2"
+                    onClick={() => loginWithRedirect()}
+                  >
+                    <AiOutlineShoppingCart />
+                  </button>
+                )}
+                <button
+                  className="btn-product-icons ml-2"
+                  onClick={() => view(curElm)}
+                >
                   <BsEye />
                 </button>
                 <button className="btn-product-icons p-2">
