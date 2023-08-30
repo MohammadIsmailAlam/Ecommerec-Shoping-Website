@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Nav from "./Components/Nav";
+import Nav from "./Components/nav";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import About from "./Components/Home/About";
