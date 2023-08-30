@@ -40,3 +40,7 @@
 .productList-li-btn {
     @apply px-4 py-1 cursor-pointer;
   }
+
+  .closeBtn {
+    @apply absolute top-2 right-2.5 bg-[#082f49] text-white hover:text-black hover:bg-gray-200 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center transition-colors duration-200 ease-in-out;
+  }
