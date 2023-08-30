@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ProductDetails from "../Assets/ProductDetails";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
+import Modal from "../Components/Model";
 
-const ProductList = () => {
-  const [product, setProduct] = useState(ProductDetails);
+const ProductList = ({ product, setProduct, detail, close, setClose, view }) => {
   const filtterproduct = (product) => {
     const update = ProductDetails.filter((x) => {
       return x.Cat === product;
@@ -16,10 +16,11 @@ const ProductList = () => {
   };
   return (
     <>
+      <Modal close={close} detail={detail} onClose={() => setClose(false)} />
       <div className="products p-8">
         <h2 className="text-3xl font-semibold"># Products</h2>
         <p className="text-gray-600">Home . Product</p>
-        <div className="container flex justify-between">
+        <div className="container md:flex justify-between">
           <div className="filter p-5">
             <div className="categories">
               <h3 className="text-lg font-semibold">Categories</h3>
@@ -28,37 +29,43 @@ const ProductList = () => {
                   className="productList-li-btn"
                   onClick={() => AllProducts()}
                 >
-                  All Products
+                  {" "}
+                  All Products{" "}
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Tablet")}
                 >
-                  Tablet
+                  {" "}
+                  Tablet{" "}
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Smart Watch")}
                 >
-                  Smart Watch
+                  {" "}
+                  Smart Watch{" "}
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Headphone")}
                 >
-                  HeadPhone
+                  {" "}
+                  HeadPhone{" "}
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Camera")}
                 >
-                  Camera
+                  {" "}
+                  Camera{" "}
                 </li>
                 <li
                   className="productList-li-btn"
                   onClick={() => filtterproduct("Gaming")}
                 >
-                  Gaming
+                  {" "}
+                  Gaming{" "}
                 </li>
               </ul>
             </div>
@@ -79,7 +86,10 @@ const ProductList = () => {
                           <button className="btn-product-icons ml-2">
                             <AiOutlineShoppingCart />
                           </button>
-                          <button className="btn-product-icons ml-2">
+                          <button
+                            className="btn-product-icons ml-2"
+                            onClick={() => view(curElm)}
+                          >
                             <BsEye />
                           </button>
                           <button className="btn-product-icons p-2">
