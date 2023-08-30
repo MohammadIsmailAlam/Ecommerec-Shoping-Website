@@ -9,8 +9,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./auth/Login";
 import LogoutButton from "./auth/LogOut";
 
-export default function Nav() {
-  const [search, setSearch] = useState()
+export default function Nav({ searchBtn }) {
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const { isAuthenticated, user } = useAuth0();
   return (
@@ -30,16 +30,26 @@ export default function Nav() {
             <img src={Logo} alt="logo" />
           </div>
           <div className="search_box mr-8 md:flex items-center">
-            <input
-              type="text"
-              value={search}
-              placeholder="Enter The Product Name"
-              onChange={(e) => setSearch(e.target.value)}
-              className="py-2 px-4 border-3 border-zinc-400 w-50 text-black"
-            />
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">
-              <BiSearchAlt />
-            </button>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                searchBtn(search);
+              }}
+            >
+              <input
+                type="text"
+                value={search}
+                placeholder="Enter The Product Name"
+                onChange={(e) => setSearch(e.target.value)}
+                className="py-2 px-4 border-3 border-zinc-400 w-50 text-black"
+              />
+              <button
+                type="submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded-md ml-2"
+              >
+                <BiSearchAlt />
+              </button>
+            </form>
           </div>
           <div className="icon md:flex items-center">
             {isAuthenticated && (
