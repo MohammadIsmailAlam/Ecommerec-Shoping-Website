@@ -25,7 +25,7 @@ export default function Nav({ searchBtn }) {
       </div>
 
       <div className="main_header border-b border-zinc-400 bg-white">
-        <div className="container md:flex justify-between items-center">
+        <div className="md:flex justify-between items-center">
           <div className="logo max-w-[250px]">
             <img src={Logo} alt="logo" />
           </div>
@@ -53,7 +53,7 @@ export default function Nav({ searchBtn }) {
             </form>
           </div>
 
-          <div className="icon md:flex items-center">
+          <div className="icon md:flex items-center m-8">
             {isAuthenticated && (
               <div className="account md:flex items-center mr-8">
                 <div className="user_icon text-blue-900 text-base">

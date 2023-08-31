@@ -7,7 +7,7 @@ const TopBanner = () => {
   const navigate = useNavigate();
   return (
     <div className="top-banner bg-blue-100 py-3">
-      <div className="container md:flex justify-between">
+      <div className="md:flex justify-between">
         <div className="px-8 detail">
           <h2 className="md:text-4xl font-semibold text-blue-800 mb-6">
             The Note Book Collection 2023

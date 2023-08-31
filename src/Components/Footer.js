@@ -9,9 +9,11 @@ const Footer = () => {
   return (
     <>
       <div className="footer bg-blue-100">
-        <div className="container md:flex justify-between px-8 py-6">
+        <div className="md:flex justify-between px-8 py-6">
           <div className="about">
-            <div className="logo max-w-[250px] py-5">
+            <div className="logo max-w-[250px] py-5 mx-auto">
+              {" "}
+              {/* Added mx-auto */}
               <img src={logo} alt="logo" />
             </div>
             <div className="detail text-left md:text-center">
