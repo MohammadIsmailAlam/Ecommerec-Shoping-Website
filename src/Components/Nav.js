@@ -3,7 +3,7 @@ import { FaTruckMoving } from "react-icons/fa";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { BsBagCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
-import Logo from "../Assets/img/twitter_header_photo_1.png";
+import Logo from "../Assets/img/output-onlinepngtools.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./auth/Login";
@@ -26,7 +26,7 @@ export default function Nav({ searchBtn }) {
 
       <div className="main_header border-b border-zinc-400 bg-white">
         <div className="md:flex justify-between items-center">
-          <div className="logo max-w-[250px]">
+          <div className="logo max-w-[250px] m-3">
             <img src={Logo} alt="logo" />
           </div>
           <div className="search_box mr-8 md:flex items-center">
