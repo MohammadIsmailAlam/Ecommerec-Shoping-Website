@@ -8,7 +8,7 @@ const Model = ({ close, detail, onClose }) => {
         <div
           id="popup-modal"
           tabIndex="-1"
-          className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed top-0 left-0 right-0 bottom-0 z-50 md:flex items-center justify-center bg-black bg-opacity-50"
         >
           <div className={`product_detail ${close ? "block" : "hidden"}`}>
             <div className="container bg-white p-6 rounded-lg shadow relative">

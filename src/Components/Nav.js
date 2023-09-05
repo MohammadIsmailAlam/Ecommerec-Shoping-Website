@@ -11,6 +11,7 @@ import LogoutButton from "./auth/LogOut";
 
 export default function Nav({ searchBtn }) {
   const [search, setSearch] = useState("");
+  const [showTooltip, setShowTooltip] = useState(false);
   const navigate = useNavigate();
   const { isAuthenticated, user } = useAuth0();
   return (
@@ -64,18 +65,31 @@ export default function Nav({ searchBtn }) {
             )}
 
             <div className="md:flex cursor-pointer">
-              <AiOutlineHeart
-                className="text-blue-500 text-xl"
-                onClick={() => {
-                  navigate("/");
-                }}
-              />
-              <BsBagCheck
-                className="text-blue-500 text-xl ml-2"
-                onClick={() => {
-                  navigate("/cart");
-                }}
-              />
+              <div className="nav-favourite text-blue-500 text-xl mr-2">
+                <AiOutlineHeart
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                />
+              </div>
+              <div className="nav-cart relative text-blue-500 text-xl ml-2">
+                <BsBagCheck
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
+                />
+                <div
+                  className={`absolute top-full left-1/2 transform -translate-x-1/2 ${
+                    showTooltip ? "block" : "hidden"
+                  }`}
+                >
+                  <span className="bg-gray-800 text-white text-sm px-2 py-1 rounded-md ">
+                    Cart
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
